@@ -1,22 +1,18 @@
+import { ADD_ANSWER } from "./types";
+import { combineReducers } from "redux";
 
-import { CREATE_ITEM } from "./types";
-
-const defaultState = {
-  items: [],
-};
-
-const answerReducer = (state = defaultState, action) => {
+const answerReducer = (state = [], action) => {
   switch (action.type) {
-    case CREATE_ITEM: {
-      console.log("action", action);
-      console.log("state", state);
-      return { ...state, answer: action.payload };
-      
-    }
+    case ADD_ANSWER:
+      return [...state,  action.payload]
 
     default:
       return state;
   }
-};
+}
 
-export default answerReducer;
+const quizApp = combineReducers({
+  answerReducer,
+});
+
+export default quizApp;

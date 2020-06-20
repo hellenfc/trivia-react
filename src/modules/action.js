@@ -1,12 +1,13 @@
-import { CREATE_ITEM } from "./types";
+import { ADD_ANSWER } from "./types";
 
 // actions
-const createItem = (answer) => ({
-  type: CREATE_ITEM,
-  payload: answer,
-});
+const addAnswer = (answer) => {
+  return {
+    type: ADD_ANSWER,
+    payload: answer,
+  };
+};
 
-
-export default {
-  createItem,
+export {
+  addAnswer,
 };

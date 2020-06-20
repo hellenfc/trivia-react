@@ -5,12 +5,14 @@ import './index.css';
 // import * as serviceWorker from "./serviceWorker";
 import { Provider as ReduxProvider } from "react-redux";
 import Routes from "./Routes";
-import configureStore from "./modules/store";
 
-const reduxStore = configureStore();
+import { createStore } from "redux";
+import quizApp from "./modules/reducer"
+
+const store = createStore(quizApp);
 
 ReactDOM.render(
-  <ReduxProvider store={reduxStore}>
+  <ReduxProvider store={store}>
     <React.StrictMode>
       <Routes />
     </React.StrictMode>

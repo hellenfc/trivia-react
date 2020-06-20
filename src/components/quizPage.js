@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import Button from "@material-ui/core/Button";
 import { useHistory } from "react-router-dom";
-// import { connect } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+
+import { addAnswer } from "../modules/action";
 
 const Quiz = () => {
-  const answers = [];
   const [questionCount, setQuesionCount] = useState(0);
-  const [answersArray, setAnswer] = useState(answers);
+  
   const history = useHistory();
   const dataJSON = {
     response_code: 0,
@@ -102,6 +103,11 @@ const Quiz = () => {
     ],
   };
 
+  const answers = useSelector((state) => state.answerReducer);
+  const dispatch = useDispatch();
+
+  console.log('store redux', answers)
+
   function saveResult(value) {
     const correctAnswer = dataJSON.results[
       questionCount
@@ -115,9 +121,8 @@ const Quiz = () => {
       question: dataJSON.results[questionCount].question,
       isCorrect,
     };
-    setAnswer([...answersArray, answer]);
-    console.log('answer array', answersArray)
-    // Aqui se agrega al store
+
+    dispatch(addAnswer(answer));
   }
 
   function handleClick(value) {
@@ -138,4 +143,4 @@ const Quiz = () => {
   );
 };
 
-export default (Quiz);
+export default Quiz;
