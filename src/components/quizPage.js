@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Button from "@material-ui/core/Button";
 import { useHistory } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import { addAnswer } from "../modules/action";
 
@@ -103,19 +103,14 @@ const Quiz = () => {
     ],
   };
 
-  const answers = useSelector((state) => state.answerReducer);
   const dispatch = useDispatch();
 
-  console.log('store redux', answers)
-
-  function saveResult(value) {
+    function saveResult(value) {
     const correctAnswer = dataJSON.results[
       questionCount
     ].correct_answer.toLowerCase();
     let parsedCorrectAnswer = JSON.parse(correctAnswer);
     let isCorrect = parsedCorrectAnswer === value ? true : false;
-
-    console.log("question", dataJSON.results[questionCount].question);
     let answer = {
       number: questionCount,
       question: dataJSON.results[questionCount].question,
