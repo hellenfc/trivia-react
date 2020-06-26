@@ -6,11 +6,11 @@ import { useSelector } from "react-redux";
 const Result = () => {
 
   const answers = useSelector((state) => state.answerReducer);
-
+  
+ //clear data after play again
   function renderAnswers(){
-    console.log('answers', answers)
+    console.log('RESULT answers', answers)
     return answers.map((answer, i)=> {
-      console.log('answer', answer)
       return(
         <div>
           <p>{answer.question}</p>
@@ -19,7 +19,6 @@ const Result = () => {
       );
     })
   }
-  console.log('Soy Result')
   return (
     <div>
       <h1>Result Page</h1>

@@ -10,7 +10,6 @@ import { createStore } from "redux";
 import quizApp from "./modules/reducer"
 
 const store = createStore(quizApp);
-
 ReactDOM.render(
   <ReduxProvider store={store}>
     <React.StrictMode>
