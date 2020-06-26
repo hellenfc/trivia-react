@@ -1,4 +1,4 @@
-import { ADD_ANSWER } from "./types";
+import { ADD_ANSWER, CLEAN_ANSWERS } from "./types";
 
 // actions
 const addAnswer = (answer) => {
@@ -8,6 +8,10 @@ const addAnswer = (answer) => {
   };
 };
 
-export {
-  addAnswer,
+const cleanAnswers = () => {
+  return {
+    type: CLEAN_ANSWERS,
+  };
 };
+
+export { addAnswer, cleanAnswers, };
