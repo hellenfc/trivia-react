@@ -5,7 +5,7 @@ import Container from "@material-ui/core/Container";
 
 const Home = () => {
   return (
-    <div className="root">
+    <div className="">
       <Container className="main" maxWidth="md">
         <h1>Welcome to the Trivia Challenge</h1>
         <h2>You will be presented with 10 True or false questions</h2>
@@ -20,11 +20,7 @@ const Home = () => {
           Begin
         </Button>
       </Container>
-      <footer className="footer">
-        <Container maxWidth="md">
-          <p>React Trivia</p>
-        </Container>
-      </footer>
+      
     </div>
   );
 };
