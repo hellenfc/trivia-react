@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  margin-top: 100px;
+  text-align: center;
+  h1 {
+    margin-bottom: 50px;
+  }
+}
+
+.footer {
+  padding: 24px 16px;
+  margin-top: auto;
+  background-color: #eeeeee;
+}

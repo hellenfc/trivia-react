@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Button from "@material-ui/core/Button";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import Button from "@material-ui/core/Button";
 
 import { addAnswer } from "../modules/action";
 
