@@ -14,6 +14,18 @@ body {
   .main h1 {
     margin-bottom: 50px; }
 
+.result-container {
+  display: flex !important;
+  flex-direction: column; }
+  .result-container h1 {
+    text-align: center; }
+  .result-container .answer-container {
+    display: flex; }
+    .result-container .answer-container p {
+      margin: 5px; }
+  .result-container Button {
+    align-self: center; }
+
 .footer {
   padding: 24px 16px;
   margin-top: auto;

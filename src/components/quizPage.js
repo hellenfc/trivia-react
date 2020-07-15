@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import Button from "@material-ui/core/Button";
+import Container from "@material-ui/core/Container";
 
 import { addAnswer } from "../modules/action";
 
@@ -11,7 +12,7 @@ const Quiz = () => {
   const [questions, setQuesions] = useState([]);
 
   const history = useHistory();
-  
+
   const dispatch = useDispatch();
 
   async function fetchData() {
@@ -50,20 +51,32 @@ const Quiz = () => {
   }
 
   return (
-    <div>
+    <Container className="main" maxWidth="md">
       <h1>Quiz Page</h1>
-      {questions.length === 0  ? (
+      {questions.length === 0 ? (
         <div>Loading ...</div>
       ) : (
         <div>
           <p>
             {questions[questionCount] ? questions[questionCount].question : ""}
           </p>
-          <Button onClick={() => handleClick(true)}>True</Button>
-          <Button onClick={() => handleClick(false)}>False</Button>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={() => handleClick(true)}
+          >
+            True
+          </Button>
+          <Button
+            variant="contained"
+            color="secondary"
+            onClick={() => handleClick(false)}
+          >
+            False
+          </Button>
         </div>
       )}
-    </div>
+    </Container>
   );
 };
 

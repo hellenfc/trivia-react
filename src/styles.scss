@@ -18,6 +18,23 @@ body {
   }
 }
 
+.result-container{
+  display: flex!important;
+  flex-direction: column;
+  h1{
+    text-align: center;
+  }
+  .answer-container{
+    display: flex;
+    p{
+      margin: 5px;
+    }
+  }
+  Button{
+    align-self: center;
+  }
+}
+
 .footer {
   padding: 24px 16px;
   margin-top: auto;
