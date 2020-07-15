@@ -1,7 +1,8 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif; }
+  font-family: sans-serif;
+  background: #f0ece3; }
 
 .root {
   display: flex;
@@ -9,11 +10,35 @@ body {
   min-height: 100vh; }
 
 .main {
-  margin-top: 100px;
+  margin-top: 70px;
   text-align: center; }
 
 .main h1 {
+  margin-top: 0px;
   margin-bottom: 50px; }
+
+.main Button {
+  margin: 20px 20px 0px 20px;
+  color: white; }
+
+.main .begin-button {
+  background-color: #0fabbc;
+  color: white; }
+
+.main .begin-button:hover {
+  background: #0b7f8b; }
+
+.main .true-button {
+  background: #438a5e; }
+
+.main .true-button:hover {
+  background: #387550; }
+
+.main .false-button {
+  background: #c41414; }
+
+.main .false-button:hover {
+  background: #ad1414; }
 
 .result-container {
   display: flex !important;
@@ -28,10 +53,22 @@ body {
 .result-container .answer-container p {
   margin: 5px; }
 
+.result-container .answer-container .check-icon {
+  color: #387550; }
+
+.result-container .answer-container .cancel-icon {
+  color: #ad1414; }
+
 .result-container Button {
-  align-self: center; }
+  background-color: #0fabbc;
+  align-self: center;
+  color: #f0ece3; }
+
+.result-container Button:hover {
+  background: #0b7f8b; }
 
 .footer {
-  padding: 24px 16px;
+  padding: 11px 16px;
   margin-top: auto;
-  background-color: #eeeeee; }
+  background-color: #596e79;
+  color: #f0ece3; }

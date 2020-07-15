@@ -61,15 +61,15 @@ const Quiz = () => {
             {questions[questionCount] ? questions[questionCount].question : ""}
           </p>
           <Button
+            className="true-button"
             variant="contained"
-            color="primary"
             onClick={() => handleClick(true)}
           >
             True
           </Button>
           <Button
+          className="false-button"
             variant="contained"
-            color="secondary"
             onClick={() => handleClick(false)}
           >
             False

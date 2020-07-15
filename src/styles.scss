@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background: #f0ece3;
 }
 
 .root {
@@ -11,32 +12,69 @@ body {
 }
 
 .main {
-  margin-top: 100px;
+  margin-top: 70px;
   text-align: center;
   h1 {
+    margin-top: 0px;
     margin-bottom: 50px;
+  }
+  Button {
+    margin: 20px 20px 0px 20px;
+    color: white;
+  }
+  .begin-button {
+    background-color: #0fabbc;
+    color: white;
+    &:hover {
+      background: #0b7f8b;
+    }
+  }
+  .true-button {
+    background: #438a5e;
+    &:hover {
+      background: #387550;
+    }
+  }
+  .false-button {
+    background: #c41414;
+    &:hover {
+      background: #ad1414;
+    }
   }
 }
 
-.result-container{
-  display: flex!important;
+.result-container {
+  display: flex !important;
   flex-direction: column;
-  h1{
+  h1 {
     text-align: center;
   }
-  .answer-container{
+
+  .answer-container {
     display: flex;
-    p{
+    p {
       margin: 5px;
     }
+    .check-icon {
+      color: #387550;
+    }
+    .cancel-icon {
+      color: #ad1414;
+    }
   }
-  Button{
+  Button {
+    background-color: #0fabbc;
     align-self: center;
+    color: #f0ece3;
+    &:hover {
+      background: #0b7f8b;
+    }
   }
 }
 
 .footer {
-  padding: 24px 16px;
+  padding: 11px 16px;
   margin-top: auto;
-  background-color: #eeeeee;
+  background-color: #596e79;
+  color: #f0ece3;
 }

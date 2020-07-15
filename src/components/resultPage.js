@@ -5,7 +5,6 @@ import { useHistory } from "react-router-dom";
 import Container from "@material-ui/core/Container";
 import CancelIcon from "@material-ui/icons/Cancel";
 import CheckCircleIcon from "@material-ui/icons/CheckCircle";
-import { green, red } from "@material-ui/core/colors";
 
 import { cleanAnswers } from "../modules/action";
 
@@ -26,9 +25,9 @@ const Result = () => {
         <div className="answer-container">
           <div>
             {answer.isCorrect ? (
-              <CheckCircleIcon style={{ color: green[500] }} />
+              <CheckCircleIcon className="check-icon" />
             ) : (
-              <CancelIcon style={{ color: red[500] }} />
+              <CancelIcon className="cancel-icon" />
             )}
           </div>
           <p>{answer.question}</p>
@@ -44,7 +43,6 @@ const Result = () => {
       <Button
         size="large"
         variant="contained"
-        color="primary"
         onClick={() => handleClick()}
       >
         PLAY AGAIN?
