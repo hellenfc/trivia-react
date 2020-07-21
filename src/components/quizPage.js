@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
 
+import { formatText } from "../util";
 import { addAnswer } from "../modules/action";
 
 const Quiz = () => {
@@ -50,6 +51,12 @@ const Quiz = () => {
     }
   }
 
+  let questionText = "";
+  if (questions[questionCount]) {
+    questionText = questions[questionCount].question;
+    questionText = formatText(questionText);
+  }
+
   return (
     <Container className="main" maxWidth="md">
       <h1>Quiz Page</h1>
@@ -57,9 +64,7 @@ const Quiz = () => {
         <div>Loading ...</div>
       ) : (
         <div>
-          <p>
-            {questions[questionCount] ? questions[questionCount].question : ""}
-          </p>
+          <p>{questionText}</p>
           <Button
             className="true-button"
             variant="contained"
@@ -68,7 +73,7 @@ const Quiz = () => {
             True
           </Button>
           <Button
-          className="false-button"
+            className="false-button"
             variant="contained"
             onClick={() => handleClick(false)}
           >

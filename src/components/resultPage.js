@@ -6,6 +6,8 @@ import Container from "@material-ui/core/Container";
 import CancelIcon from "@material-ui/icons/Cancel";
 import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 
+import { formatText } from "../util";
+
 import { cleanAnswers } from "../modules/action";
 
 const Result = () => {
@@ -30,7 +32,7 @@ const Result = () => {
               <CancelIcon className="cancel-icon" />
             )}
           </div>
-          <p>{answer.question}</p>
+          <p>{formatText(answer.question)}</p>
         </div>
       );
     });
