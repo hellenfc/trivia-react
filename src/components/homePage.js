@@ -13,7 +13,7 @@ const Home = () => {
         <Button
           className="begin-button"
           component={Link}
-          to="/quiz"
+          to={process.env.PUBLIC_URL + "/quiz"}
           size="large"
           variant="contained"
         >

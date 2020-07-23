@@ -18,7 +18,7 @@ const Result = () => {
 
   function handleClick() {
     dispatch(cleanAnswers());
-    history.push("");
+    history.push(process.env.PUBLIC_URL + "");
   }
 
   function renderAnswers() {

@@ -9,9 +9,19 @@ export default class Routes extends Component {
     return (
       <Router>
         <Switch>
-          <Route exact path="/" component={Home}></Route>
-          <Route path="/quiz" component={Quiz}></Route>
-          <Route path="/result" component={Result}></Route>
+          <Route
+            exact
+            path={process.env.PUBLIC_URL + "/"}
+            component={Home}
+          ></Route>
+          <Route
+            path={process.env.PUBLIC_URL + "/quiz"}
+            component={Quiz}
+          ></Route>
+          <Route
+            path={process.env.PUBLIC_URL + "/result"}
+            component={Result}
+          ></Route>
         </Switch>
       </Router>
     );

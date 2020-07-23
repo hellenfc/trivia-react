@@ -1,0 +1,122 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: #f0ece3; }
+
+.root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; }
+
+.root Button {
+  font-weight: bold; }
+
+.ribbon {
+  line-height: 4.5em;
+  text-align: center;
+  font-weight: bold;
+  width: 5rem;
+  height: 4rem;
+  color: white;
+  margin: 1em 0.5em 0;
+  padding-top: 1rem;
+  position: absolute;
+  top: -32px;
+  right: 10%; }
+
+.ribbon:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-right: 2.5rem solid transparent;
+  border-left: 2.5rem solid transparent;
+  position: absolute;
+  top: 5rem;
+  left: 0; }
+
+.ribbon.ribbon--red {
+  background: #0fabbc; }
+
+.ribbon:after {
+  border-top: 1.5rem solid #0fabbc; }
+
+.main {
+  margin-top: 70px;
+  text-align: center; }
+
+.main h1 {
+  margin-top: 0px;
+  margin-bottom: 70px; }
+
+.main Button {
+  margin: 20px 20px 0px 20px;
+  color: white; }
+
+.main .text {
+  height: 55px; }
+
+.main .begin-button {
+  background-color: #0fabbc;
+  color: white;
+  margin-top: 50px; }
+
+.main .begin-button:hover {
+  background: #0b7f8b; }
+
+.main .true-button {
+  background: #438a5e; }
+
+.main .true-button:hover {
+  background: #387550; }
+
+.main .false-button {
+  background: #c41414; }
+
+.main .false-button:hover {
+  background: #ad1414; }
+
+.result-container {
+  display: flex !important;
+  flex-direction: column;
+  margin-top: 70px; }
+
+.result-container h1 {
+  margin-top: 0px;
+  margin-bottom: 50px;
+  text-align: center; }
+
+.result-container h3 {
+  margin: 5px;
+  text-align: center; }
+
+.result-container .answer-container {
+  display: flex;
+  margin: 10px 0px 10px 0px; }
+
+.result-container .answer-container:first-of-type {
+  margin-top: 30px; }
+
+.result-container .answer-container p {
+  margin: 5px; }
+
+.result-container .answer-container .check-icon {
+  color: #387550; }
+
+.result-container .answer-container .cancel-icon {
+  color: #ad1414; }
+
+.result-container Button {
+  background-color: #0fabbc;
+  align-self: center;
+  color: #f0ece3;
+  margin-top: 50px; }
+
+.result-container Button:hover {
+  background: #0b7f8b; }
+
+.footer {
+  padding: 11px 16px;
+  margin-top: auto;
+  background-color: #596e79;
+  color: #f0ece3; }

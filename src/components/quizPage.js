@@ -47,7 +47,7 @@ const Quiz = () => {
     saveResult(value);
     setQuesionCount(questionCount + 1);
     if (questionCount === questions.length - 1) {
-      history.push("result");
+      history.push(process.env.PUBLIC_URL + "result");
     }
   }
 
