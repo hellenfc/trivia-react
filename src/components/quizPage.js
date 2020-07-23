@@ -51,20 +51,15 @@ const Quiz = () => {
     }
   }
 
-  let questionText = "";
-  if (questions[questionCount]) {
-    questionText = questions[questionCount].question;
-    questionText = formatText(questionText);
-  }
-
   return (
     <Container className="main" maxWidth="md">
+      <div className="ribbon  ribbon--red">{questionCount + 1} / 10</div>
       <h1>Quiz Page</h1>
       {questions.length === 0 ? (
         <div>Loading ...</div>
       ) : (
         <div>
-          <p>{questionText}</p>
+          <p className="text">{questions[questionCount] ? formatText(questions[questionCount].question) : ""}</p>
           <Button
             className="true-button"
             variant="contained"

@@ -12,6 +12,7 @@ import { cleanAnswers } from "../modules/action";
 
 const Result = () => {
   const answers = useSelector((state) => state.answerReducer);
+
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -20,11 +21,10 @@ const Result = () => {
     history.push("");
   }
 
-  //clear data after play again
   function renderAnswers() {
     return answers.map((answer, i) => {
       return (
-        <div className="answer-container">
+        <div className="answer-container" key={i}>
           <div>
             {answer.isCorrect ? (
               <CheckCircleIcon className="check-icon" />
@@ -38,15 +38,18 @@ const Result = () => {
     });
   }
 
+  const correctAnswer = answers.filter((answer) => {
+    return answer.isCorrect; 
+  })
+
+  console.log("value",correctAnswer)
   return (
     <Container className="result-container" maxWidth="md">
       <h1>Result Page</h1>
+      <h3>{correctAnswer.length > 5 ? "Congratulations!" : "Try Again"} </h3>
+      <h3>You Scored: {correctAnswer.length} / 10</h3>
       {renderAnswers()}
-      <Button
-        size="large"
-        variant="contained"
-        onClick={() => handleClick()}
-      >
+      <Button size="large" variant="contained" onClick={() => handleClick()}>
         PLAY AGAIN?
       </Button>
     </Container>

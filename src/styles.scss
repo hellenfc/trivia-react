@@ -1,14 +1,58 @@
+$background-color: #f0ece3;
+$primary-button: #0fabbc;
+$primary-button-hover:#0b7f8b;
+$correct-button:#438a5e;
+$correct-button-hover:#387550;
+$wrong-button:#c41414;
+$wrong-button-hover:#ad1414;
+$footer-color: #596e79;
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background: #f0ece3;
+  background: $background-color;
 }
 
 .root {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  Button{
+     font-weight: bold;
+  }
+}
+
+.ribbon {
+  line-height: 4.5em;
+  text-align: center;
+  font-weight: bold;
+  width: 5rem;
+  height: 4rem;
+  color: white;
+  margin: 1em 0.5em 0;
+  padding-top: 1rem;
+  position: absolute;
+  top: -32px;
+  right: 10%;
+  &:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-right: 2.5rem solid transparent;
+    border-left: 2.5rem solid transparent;
+    position: absolute;
+    top: 5rem;
+    left: 0;
+  }
+
+  &.ribbon--red {
+    background: $primary-button;
+  }
+
+  &:after {
+    border-top: 1.5rem solid $primary-button;
+  }
 }
 
 .main {
@@ -16,29 +60,33 @@ body {
   text-align: center;
   h1 {
     margin-top: 0px;
-    margin-bottom: 50px;
+    margin-bottom: 70px;
   }
   Button {
     margin: 20px 20px 0px 20px;
     color: white;
   }
+  .text {
+    height: 55px;
+  }
   .begin-button {
-    background-color: #0fabbc;
+    background-color: $primary-button;
     color: white;
+    margin-top: 50px;
     &:hover {
-      background: #0b7f8b;
+      background: $primary-button-hover;
     }
   }
   .true-button {
-    background: #438a5e;
+    background: $correct-button;
     &:hover {
-      background: #387550;
+      background: $correct-button-hover;
     }
   }
   .false-button {
-    background: #c41414;
+    background: $wrong-button;
     &:hover {
-      background: #ad1414;
+      background: $wrong-button-hover;
     }
   }
 }
@@ -46,28 +94,40 @@ body {
 .result-container {
   display: flex !important;
   flex-direction: column;
+  margin-top: 70px;
   h1 {
+    margin-top: 0px;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+  h3{
+    margin: 5px;
     text-align: center;
   }
 
   .answer-container {
     display: flex;
+    margin: 10px 0px 10px 0px;
+    &:first-of-type{
+      margin-top: 30px;;
+    }
     p {
       margin: 5px;
     }
     .check-icon {
-      color: #387550;
+      color: $correct-button-hover;
     }
     .cancel-icon {
-      color: #ad1414;
+      color: $wrong-button-hover;
     }
   }
   Button {
-    background-color: #0fabbc;
+    background-color: $primary-button;
     align-self: center;
-    color: #f0ece3;
+    color: $background-color;
+    margin-top: 50px;
     &:hover {
-      background: #0b7f8b;
+      background: $primary-button-hover;
     }
   }
 }
@@ -75,6 +135,6 @@ body {
 .footer {
   padding: 11px 16px;
   margin-top: auto;
-  background-color: #596e79;
-  color: #f0ece3;
+  background-color: $footer-color;
+  color: $background-color;
 }
