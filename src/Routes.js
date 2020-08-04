@@ -7,19 +7,19 @@ import Result from "./components/resultPage";
 export default class Routes extends Component {
   render() {
     return (
-      <Router>
+      <Router basename="/trivia-react">
         <Switch>
           <Route
             exact
-            path={process.env.PUBLIC_URL + "/"}
+            path={"/"}
             component={Home}
           ></Route>
           <Route
-            path={process.env.PUBLIC_URL + "/quiz"}
+            path={"/quiz"}
             component={Quiz}
           ></Route>
           <Route
-            path={process.env.PUBLIC_URL + "/result"}
+            path={"/result"}
             component={Result}
           ></Route>
         </Switch>
